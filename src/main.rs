@@ -7,14 +7,12 @@ use piston_window::*;
 
 fn main( ) {
 	// create window object called `window`
-	let mut window: PistonWindow = WindowSettings::new (
-		"piston: hello_world", // window name
-		[ 1920, 1080 ]           // window size
-	)
-	.exit_on_esc( true )    // exit the program when esc is pressed
-	.fullscreen( true )     // enables full screen
-	.build( )               // builds the piston window frow the window settings
-	.unwrap( );             // panics on error
+	let mut window: PistonWindow =
+		WindowSettings::new ( "piston: hello_world", [ 200, 200 ] )
+			.exit_on_esc( true )    // exit the program when esc is pressed
+			.fullscreen( true )     // enables full screen
+			.build( )               // builds the piston window frow the window settings
+			.unwrap( );             // panics on error
 
 	window.set_capture_cursor( true ); // captures the cursor on the screen
 	                                   // set here because window settings doesn't have
