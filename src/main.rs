@@ -9,11 +9,16 @@ fn main( ) {
 	// create window object called `window`
 	let mut window: PistonWindow = WindowSettings::new (
 		"piston: hello_world", // window name
-		[ 200, 200 ]           // window size
+		[ 1920, 1080 ]           // window size
 	)
-	.exit_on_esc( true )
-	.build( )
-	.unwrap( );
+	.exit_on_esc( true )    // exit the program when esc is pressed
+	.fullscreen( true )     // enables full screen
+	.build( )               // builds the piston window frow the window settings
+	.unwrap( );             // panics on error
+
+	window.set_capture_cursor( true ); // captures the cursor on the screen
+	                                   // set here because window settings doesn't have
+	                                   // capture cursor option
 
 	// search for folder "assets"
 	let assets = find_folder::Search::ParentsThenKids( 3, 3 )
